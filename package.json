@@ -9,16 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "byte_frontend": "file:",
+    "framer-motion": "^12.12.1",
+    "lucide-react": "^0.511.0",
+    "next": "15.3.2",
+    "puppeteer": "^24.8.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.2"
+    "recharts": "^2.15.3",
+    "yahoo-finance2": "^2.13.3"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5"
   }
 }
