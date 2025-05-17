@@ -10,9 +10,14 @@
   },
   "dependencies": {
     "byte_frontend": "file:",
+    "framer-motion": "^12.12.1",
+    "lucide-react": "^0.511.0",
     "next": "15.3.2",
+    "puppeteer": "^24.8.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^2.15.3",
+    "yahoo-finance2": "^2.13.3"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
