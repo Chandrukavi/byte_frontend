@@ -8,7 +8,10 @@ import puppeteer from 'puppeteer';
  */
 export async function getYahooData(symbol: string) {
   try {
-    const quote = await yahooFinance.quote(symbol);
+    // Import the correct type from yahoo-finance2 at the top of the file:
+    // import type { Quote } from 'yahoo-finance2/dist/esm/src/modules/quote';
+
+    const quote = await yahooFinance.quote(symbol) as any; // Use 'as any' or a more specific type if available
     
     // Get additional market data
     const marketData = {
@@ -55,7 +58,7 @@ function formatMarketCap(marketCap: number): string {
  */
 export async function getGoogleData(symbol: string): Promise<{ peRatio: number; earnings: string; bookValue: string; debtToEquity: string; currentRatio: string; } | null> {
   try {
-    const browser = await puppeteer.launch({ headless: 'new' });
+    const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
     const url = `https://www.google.com/finance/quote/${symbol}`;
     await page.goto(url, { waitUntil: 'networkidle2' });
@@ -100,7 +103,7 @@ export async function getHistoricalData(symbol: string) {
     const queryOptions = {
       period1: startDate.toISOString().split('T')[0],
       period2: endDate.toISOString().split('T')[0],
-      interval: '1mo' // Monthly data
+      interval: "1mo" as "1mo" // Monthly data, explicitly typed
     };
     
     const result = await yahooFinance.historical(symbol, queryOptions);
